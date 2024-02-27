@@ -7,6 +7,7 @@ Para poder ejecutar el proyecto deberas tener instalada ciertas herramientas, en
 
 1. Instala nodejs la version LTS desde el sitio web oficial: https://nodejs.org/en
 2. Confirmar la instalacion de node y npm desde tu terminal.
+   
   Node
    ```bash
    node --version
