@@ -1,0 +1,15 @@
+---
+import FacebookIcon from "./icons/FacebookIcon.astro";
+import TiktokIcon from "./icons/TiktokIcon.astro";
+
+const { class: clases } = Astro.props;
+---
+
+<div class=`${clases}`>
+  <a href="https://Facebook.com" aria-label="Facebook">
+    <FacebookIcon class="text-white w-10 h-10" />
+  </a>
+  <a href="https://www.tiktok.com/" aria-label="Tiktok">
+    <TiktokIcon class="text-white w-10 h-10" />
+  </a>
+</div>
