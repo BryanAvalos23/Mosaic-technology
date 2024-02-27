@@ -17,4 +17,15 @@ Para poder ejecutar el proyecto deberas tener instalada ciertas herramientas, en
       ```bash
       npm --version
       ```
-   
+3. Clonar el repositorio.
+   ```bash
+   git clone https://github.com/BryanAvalos23/Mosaic-technology.git
+   ```
+4. Desde tu termianl dirigirte al proyecto en la direccion raiz y ejecutar el sigueinte comando.
+   ```bash
+   npm install
+   ```
+5. Luego de que se instalen las dependencias ejecuta el siguiente comando para levantar el servidor.
+   ```bash
+   npm run dev
+   ```
