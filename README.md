@@ -1,12 +1,12 @@
 # Sitio web Mosaic Technology
 
-Proyecto de la materia Formulacion y evaluacion de proyectos
+Proyecto de la materia Formulación y Evaluación de Proyectos
 
-## Instalacion y ejecucion
-Para poder ejecutar el proyecto deberas tener instalada ciertas herramientas, en este caso necesitaras tener nodejs y npm para poder ejecutarlo.
+## Instalación y ejecución
+Para poder ejecutar el proyecto, deberás tener instaladas ciertas herramientas. En este caso, necesitarás tener Node.js y npm para poder ejecutarlo.
 
 1. Instala nodejs la version LTS desde el sitio web oficial: https://nodejs.org/en
-2. Confirmar la instalacion de node y npm desde tu terminal.
+2. Confirmar la instalación de node y npm desde tu terminal.
    
      - Node
          ```bash
@@ -21,7 +21,7 @@ Para poder ejecutar el proyecto deberas tener instalada ciertas herramientas, en
    ```bash
    git clone https://github.com/BryanAvalos23/Mosaic-technology.git
    ```
-4. Desde tu termianl dirigirte al proyecto en la direccion raiz y ejecutar el sigueinte comando.
+4. Desde tu terminal dirigirte al proyecto en la dirección raíz y ejecutar el siguiente comando.
    ```bash
    npm install
    ```
