@@ -1,6 +1,6 @@
 # Sitio web Mosaic Technology
 
-Proyecto de la materia Formulación y Evaluación de Proyectos
+Proyecto de la materia Formulación y Evaluación de Proyectos, Consultora TI Mosaic Technology.
 
 ## Instalación y ejecución
 Para poder ejecutar el proyecto, deberás tener instaladas ciertas herramientas. En este caso, necesitarás tener Node.js y npm para poder ejecutarlo.
