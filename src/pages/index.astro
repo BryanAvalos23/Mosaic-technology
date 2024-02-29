@@ -3,6 +3,7 @@ import Home from "../components/Home.astro";
 import Layout from "../layouts/Layout.astro";
 import Services from "../components/Services.astro";
 import AboutUs from "../components/AboutUs.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Mosaic Technology - Una consultora TI para innovar tu negocio">
@@ -16,5 +17,11 @@ import AboutUs from "../components/AboutUs.astro";
       Quienes somos
     </h2>
     <AboutUs />
+    <h2 class="text-5xl text-blue-800 font-semibold text-center mt-12">
+      Equipo de trabajo
+    </h2>
+    <section class="mt-12">
+      <Footer />
+    </section>
   </main>
 </Layout>
