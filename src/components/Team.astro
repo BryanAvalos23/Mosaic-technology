@@ -45,11 +45,11 @@ import GithubIcon from "./icons/GithubIcon.astro";
   const carousel = document.querySelector(".carousel");
 
   leftButton?.addEventListener("click", () => {
-    carousel?.scrollBy({ left: -300, behavior: "smooth" });
+    carousel?.scrollBy({ left: -400, behavior: "smooth" });
   });
 
   rightButton?.addEventListener("click", () => {
-    carousel?.scrollBy({ left: 300, behavior: "smooth" });
+    carousel?.scrollBy({ left: 400, behavior: "smooth" });
   });
 </script>
 
@@ -118,7 +118,7 @@ import GithubIcon from "./icons/GithubIcon.astro";
     height: 342px;
     width: 300px;
     list-style: none;
-    background: blue;
+    background: #fff;
     cursor: pointer;
     padding-bottom: 15px;
     flex-direction: column;
