@@ -3,14 +3,18 @@ import Social from "./Social.astro";
 import MenuIcon from "./icons/MenuIcon.astro";
 ---
 
-<header class="flex justify-between px-16 items-center">
+<header class="flex justify-between px-4 sm:px-16 items-center">
   <img
     class="w-28 h-24 lg:w-36 lg:h-32 object-cover"
     src="/images/logo_mosaic.png"
     alt="mosaic technoglogy mosaic-technology"
   />
 
-  <nav class="hidden lg:flex gap-12 text-lg font-medium text-white">
+  <nav id="navbar" class="hidden lg:flex gap-12 text-lg font-medium text-white">
+    <MenuIcon
+      id="menuIconClose"
+      class="block md:hidden text-white size-8 hover:cursor-pointer hover:text-blue-600"
+    />
     <a href="#" class="hover:text-yellow-300">Inicio</a>
     <a href="#" class="hover:text-yellow-300">Servicios</a>
     <a href="#" class="hover:text-yellow-300">Quienes somos</a>
@@ -19,5 +23,29 @@ import MenuIcon from "./icons/MenuIcon.astro";
 
   <Social class="hidden lg:flex gap-6" />
 
-  <MenuIcon class="block lg:hidden text-white size-8" />
+  <MenuIcon
+    id="menuIconOpen"
+    class="block lg:hidden text-white size-8 hover:cursor-pointer hover:text-blue-600"
+  />
 </header>
+
+<script>
+  const menuIconOpen = document.querySelector("#menuIconOpen");
+  const menuIconClose = document.querySelector("#menuIconClose");
+  const menu = document.querySelector("#navbar");
+
+  document.addEventListener("DOMContentLoaded", () => {
+    menuIconOpen?.addEventListener("click", openMenu);
+    menuIconClose?.addEventListener("click", closeMenu);
+  });
+
+  const openMenu = () => {
+    menu?.classList.toggle("hidden");
+    menuIconOpen?.classList.add("hidden");
+  };
+
+  const closeMenu = () => {
+    menu?.classList.toggle("hidden");
+    menuIconOpen?.classList.remove("hidden");
+  };
+</script>

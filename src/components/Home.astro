@@ -8,17 +8,20 @@ import Social from "./Social.astro";
   class="bg-[url('/images/header_background.jpg')] h-screen bg-cover bg-center"
 >
   <Header />
-  <div class="flex items-center justify-center mt-36">
-    <div class="h-2/4 w-3/4">
-      <h1 class="text-5xl text-white lg:text-6xl">
+  <div class="flex items-center justify-center mt-8 sm:mt-36">
+    <div class="w-full sm:w-3/4 lg:w-3/4 xl:w-3/4 px-4 sm:px-8">
+      <h1
+        class="text-5xl md:text-6xl text-white text-center sm:text-left mt-16 sm:mt-0"
+      >
         Saca el máximo provecho a la <span class="text-blue-500 font-bold"
           >tecnología</span
-        >
-        y haz <span class="text-blue-500 font-bold">crecer tu negocio</span>
+        > y haz <span class="text-blue-500 font-bold">crecer tu negocio</span>
       </h1>
-      <div class="flex item-center gap-12">
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-12 mt-4 sm:mt-8"
+      >
         <BtnInformacion />
-        <Social class="flex lg:hidden mt-8" />
+        <Social class="mt-4 sm:mt-0 flex gap-6 lg:hidden" />
       </div>
     </div>
   </div>
