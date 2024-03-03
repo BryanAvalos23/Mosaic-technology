@@ -2,7 +2,7 @@
 const TEAM = [
   {
     id: 1,
-    nombre: 'David Eduardo Henriquez Garay',
+    nombre: 'David Henriquez',
     image: '/images/david.jpeg',
     rol: 'CEO - CoFounder',
     linkedin: '',
@@ -10,7 +10,7 @@ const TEAM = [
   },
   {
     id: 2,
-    nombre: 'Bryan Edenilson Avalos Sanchez',
+    nombre: 'Bryan Avalos',
     image: '/images/bryan.jpeg',
     rol: 'CTO - Director de TI',
     linkedin: 'https://www.linkedin.com/in/bryan-avalos-228286273/',
@@ -18,15 +18,15 @@ const TEAM = [
   },
   {
     id: 3,
-    nombre: 'Dennis Ernesto Saravia Cruz',
+    nombre: 'Dennis Saravia',
     image: '/images/dennis.jpg',
-    rol: 'CCO - Director de comunicaciones',
+    rol: 'CCO - Director comunicaciones',
     linkedin: 'https://www.linkedin.com/in/dennis-saravia/',
     website: ''
   },
   {
     id: 4,
-    nombre: 'Christian Adonay Macias Nuñez',
+    nombre: 'Christian Macias',
     image: '/images/adonay.jpeg',
     rol: 'CMO - Director de marketing',
     linkedin: '',
@@ -34,7 +34,7 @@ const TEAM = [
   },
   {
     id: 5,
-    nombre: 'Osmar Xavier Cortez Chicas',
+    nombre: 'Osmar Cortez',
     image: '/images/osmar.jpeg',
     rol: 'CFO - Director de finanzas',
     linkedin: 'https://www.linkedin.com/in/xavier-cortez-338781268/',
