@@ -24,8 +24,12 @@ import GithubIcon from "./icons/GithubIcon.astro";
             <h2>{nombre}</h2>
             <span>{rol}</span>
             <div class="flex gap-4">
-              <LinkedIn class="size-8" />
-              <GithubIcon class="size-8" />
+              <a href={linkedin}>
+                <LinkedIn class="size-8" />
+              </a>
+              <a href="#">
+                <GithubIcon class="size-8" />
+              </a>
             </div>
           </li>
         ))
