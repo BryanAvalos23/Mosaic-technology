@@ -10,15 +10,38 @@ import MenuIcon from "./icons/MenuIcon.astro";
     alt="mosaic technoglogy mosaic-technology"
   />
 
-  <nav id="navbar" class="hidden lg:flex gap-12 text-lg font-medium text-white">
-    <MenuIcon
-      id="menuIconClose"
-      class="block md:hidden text-white size-8 hover:cursor-pointer hover:text-blue-600"
-    />
-    <a href="#" class="hover:text-yellow-300">Inicio</a>
-    <a href="#" class="hover:text-yellow-300">Servicios</a>
-    <a href="#" class="hover:text-yellow-300">Quienes somos</a>
-    <a href="#" class="hover:text-yellow-300">Contactanos</a>
+  <nav
+    id="navbar"
+    class="fixed top-0 right-0 w-64 h-full transform translate-x-full transition-transform duration-300 lg:translate-x-0 lg:block lg:relative lg:w-auto lg:h-auto lg:transform-none text-lg font-medium text-white bg-white lg:bg-inherit z-50"
+  >
+    <ul
+      class="flex flex-col gap-8 lg:gap-12 lg:flex-row h-screen lg:h-0 bg-gray-900 lg:bg-inherit lg:text-white px-4 py-4"
+    >
+      <MenuIcon
+        id="menuIconClose"
+        class="block lg:hidden size-8 hover:cursor-pointer hover:text-blue-600"
+      />
+      <a
+        href="#"
+        class="hover:text-blue-600 hover:bg-blue-gray-100/10 rounded-lg py-2 px-1 lg:bg-inherit lg:rounded-none lg:py-0 lg:px-0"
+        >Inicio</a
+      >
+      <a
+        href="#"
+        class="hover:text-blue-600 hover:bg-blue-gray-100/10 rounded-lg py-2 px-1 lg:bg-inherit lg:rounded-none lg:py-0 lg:px-0"
+        >Servicios</a
+      >
+      <a
+        href="#"
+        class="hover:text-blue-600 hover:bg-blue-gray-100/10 rounded-lg py-2 px-1 lg:bg-inherit lg:rounded-none lg:py-0 lg:px-0"
+        >Quienes somos</a
+      >
+      <a
+        href="#"
+        class="hover:text-blue-600 hover:bg-blue-gray-100/10 rounded-lg py-2 px-1 lg:bg-inherit lg:rounded-none lg:py-0 lg:px-0"
+        >Contactanos</a
+      >
+    </ul>
   </nav>
 
   <Social class="hidden lg:flex gap-6" />
@@ -40,12 +63,14 @@ import MenuIcon from "./icons/MenuIcon.astro";
   });
 
   const openMenu = () => {
-    menu?.classList.toggle("hidden");
+    menu?.classList.remove("translate-x-full");
+    menu?.classList.add("translate-x-0");
     menuIconOpen?.classList.add("hidden");
   };
 
   const closeMenu = () => {
-    menu?.classList.toggle("hidden");
+    menu?.classList.add("translate-x-full");
+    menu?.classList.remove("translate-x-0");
     menuIconOpen?.classList.remove("hidden");
   };
 </script>
