@@ -1,6 +1,7 @@
 ---
-import BtnMoreServices from "./BtnMoreServices.astro";
-import services from "../../public/js/services.ts";
+import BtnMoreServices from "../BtnMoreServices.astro";
+import services from "../../../public/js/services.ts";
+import BtnInformacion from "../BtnInformacion.astro";
 ---
 
 <div
@@ -8,7 +9,7 @@ import services from "../../public/js/services.ts";
 >
   {
     services.map(({ title, description, img }) => (
-      <article class="w-80 flex justify-center items-center border-2 rounded-lg py-8 h-[400px]">
+      <article class="w-80 flex justify-center items-center border-2 rounded-lg py-8 px-4 h-[400px]">
         <div class="w-full h-full flex flex-col justify-center items-center gap-2">
           <img
             src={img}
