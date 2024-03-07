@@ -1,22 +1,24 @@
 ---
 import BtnMoreServices from "../BtnMoreServices.astro";
 import services from "../../../public/js/services.ts";
-import BtnInformacion from "../BtnInformacion.astro";
+
+const quantityServices = 3;
 ---
 
 <div
-  class="flex flex-col flex-wrap items-center justify-center gap-12 md:flex-row md:gap-20 lg:gap-24 my-24"
+  id="container-services"
+  class="flex flex-col flex-wrap items-center justify-center gap-12 md:flex-row md:gap-16 lg:gap-20 my-20"
 >
-  {
-    services.map(({ title, description, img }) => (
-      <article class="w-80 flex justify-center items-center border-2 rounded-lg py-8 px-4 h-[400px]">
+  <!-- {
+    services.slice(0, quantityServices).map(({ title, description, img }) => (
+      <article class="w-96 flex justify-center items-center border-2 rounded-lg py-8 px-2 h-[450px]">
         <div class="w-full h-full flex flex-col justify-center items-center gap-2">
           <img
             src={img}
             alt={`Servicio de ${img}`}
-            class=" rounded-full size-52 object-cover md:size-44 lg:size-52"
+            class=" rounded-full size-44 object-cover md:size-44 lg:size-52"
           />
-          <h3 class=" font-semibold text-2xl text-white md:text-xl lg:text-2xl">
+          <h3 class=" font-semibold text-xl text-white md:text-xl lg:text-2xl">
             {title}
           </h3>
           <p class="text-lg font-normal text-center text-white">
@@ -25,8 +27,113 @@ import BtnInformacion from "../BtnInformacion.astro";
         </div>
       </article>
     ))
-  }
+  } -->
 </div>
-<div class="w-full flex justify-center mt-6 md:mt-4">
+<div class="w-full flex justify-center">
   <BtnMoreServices />
 </div>
+
+<script>
+  import SERVICES from "../../../public/js/services.ts";
+
+  const btnMoreServices = document.querySelector("#btnMoreServices");
+  const containerServices = document.querySelector("#container-services");
+
+  let quantityServices = 3;
+
+  interface Service {
+    title: String;
+    description: String;
+    img: String;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showServices(0, quantityServices);
+    btnMoreServices?.addEventListener("click", () => {
+      const currentServices = quantityServices;
+      quantityServices += 7;
+      showServices(currentServices, quantityServices);
+
+      btnMoreServices.textContent = "Ver menos";
+    });
+  });
+
+  const showServices = (start: number, end: number) => {
+    const serviceToShow = SERVICES.slice(start, end);
+    serviceToShow.forEach((service) => {
+      extractServices(service);
+    });
+  };
+
+  const extractServices = ({ title, description, img }: Service) => {
+    const article = document.createElement("article");
+    const div = document.createElement("div");
+    const imgTag = document.createElement("img");
+    const titleTag = document.createElement("h3");
+    const descriptionTag = document.createElement("p");
+
+    imgTag.classList.add(
+      "rounded-full",
+      "size-44",
+      "object-cover",
+      "md:size-44",
+      "lg:size-52",
+    );
+    if (typeof img === "string") {
+      imgTag.src = img;
+    }
+    imgTag.alt = `Imagen del serivico ${title}`;
+
+    titleTag.classList.add(
+      "font-semibold",
+      "text-xl",
+      "text-white",
+      "md:text-xl",
+      "lg:text-2xl",
+    );
+    if (typeof title === "string") {
+      titleTag.textContent = title;
+    }
+
+    descriptionTag.classList.add(
+      "text-lg",
+      "font-normal",
+      "text-center",
+      "text-white",
+    );
+    if (typeof description === "string") {
+      descriptionTag.textContent = description;
+    }
+
+    div.classList.add(
+      "w-full",
+      "h-full",
+      "flex",
+      "flex-col",
+      "justify-center",
+      "items-center",
+      "gap-2",
+    );
+    div.appendChild(imgTag);
+    div.appendChild(titleTag);
+    div.appendChild(descriptionTag);
+
+    article.classList.add(
+      "w-96",
+      "flex",
+      "justify-center",
+      "items-center",
+      "border-2",
+      "rounded-lg",
+      "py-8",
+      "px-2",
+      "h-[450px]",
+    );
+    article.appendChild(div);
+
+    const element = document.querySelectorAll("#container-services article");
+    if (element.length < quantityServices) {
+      containerServices?.appendChild(article);
+    }
+  };
+</script>
