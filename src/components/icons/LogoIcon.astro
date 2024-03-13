@@ -1,0 +1,38 @@
+<svg
+  width="100%"
+  height="200"
+  xmlns="http://www.w3.org/2000/svg"
+  {...Astro.props}
+>
+  <rect
+    x="10"
+    y="10"
+    width="380"
+    height="180"
+    rx="8"
+    ry="8"
+    style="fill:white;stroke:black;stroke-width:2;filter:url(#shadow)"></rect>
+  <text x="20" y="100" fill="black" font-family="Arial" font-size="14"
+    >Contenido Embebido</text
+  >
+
+  <!-- Filtro para la sombra -->
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feOffset result="offOut" in="SourceGraphic" dx="2" dy="2"></feOffset>
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="2"
+      ></feGaussianBlur>
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal"></feBlend>
+    </filter>
+  </defs>
+
+  <!-- Representación del enlace -->
+  <text
+    x="10"
+    y="205"
+    fill="blue"
+    font-family="Arial"
+    font-size="14"
+    text-decoration="underline">dfg</text
+  >
+</svg>
