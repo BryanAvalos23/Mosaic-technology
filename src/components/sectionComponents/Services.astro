@@ -9,25 +9,6 @@ const quantityServices = 3;
   id="container-services"
   class="flex flex-col flex-wrap items-center justify-center gap-12 md:flex-row md:gap-16 lg:gap-20 my-20"
 >
-  <!-- {
-    services.slice(0, quantityServices).map(({ title, description, img }) => (
-      <article class="w-96 flex justify-center items-center border-2 rounded-lg py-8 px-2 h-[450px]">
-        <div class="w-full h-full flex flex-col justify-center items-center gap-2">
-          <img
-            src={img}
-            alt={`Servicio de ${img}`}
-            class=" rounded-full size-44 object-cover md:size-44 lg:size-52"
-          />
-          <h3 class=" font-semibold text-xl text-white md:text-xl lg:text-2xl">
-            {title}
-          </h3>
-          <p class="text-lg font-normal text-center text-white">
-            {description}
-          </p>
-        </div>
-      </article>
-    ))
-  } -->
 </div>
 <div class="w-full flex justify-center">
   <BtnMoreServices />
@@ -72,6 +53,8 @@ const quantityServices = 3;
     const titleTag = document.createElement("h3");
     const descriptionTag = document.createElement("p");
     const btnMoreInformationServices = document.createElement("a");
+    const card = document.createElement("div");
+    const efect = document.createElement("div");
 
     imgTag.classList.add(
       "rounded-full",
@@ -79,6 +62,7 @@ const quantityServices = 3;
       "object-cover",
       "md:size-44",
       "lg:size-52",
+      "shadow-xl",
     );
     if (typeof img === "string") {
       imgTag.src = img;
@@ -118,7 +102,7 @@ const quantityServices = 3;
 
     btnMoreInformationServices.classList.add(
       "w-[150px]",
-      "bg-black",
+      "bg-white",
       "h-[50px]",
       "my-3",
       "flex",
@@ -133,7 +117,8 @@ const quantityServices = 3;
       "ease-in-out",
       "shadow-md",
       "hover:scale-105",
-      "hover:shadow-lg",
+      "hover:shadow-xl",
+      "hover:text-white",
       "before:absolute",
       "before:top-0",
       "before:-left-full",
@@ -148,7 +133,8 @@ const quantityServices = 3;
       "before:z-[-1]",
       "before:rounded-xl",
       "hover:before:left-0",
-      "text-[#fff]",
+      "text-[#323132]",
+      "font-medium",
     );
     btnMoreInformationServices.textContent = "Saber mas";
 
@@ -162,13 +148,25 @@ const quantityServices = 3;
       "flex",
       "justify-center",
       "items-center",
-      "border-2",
-      "rounded-lg",
+      "rounded-xl",
       "py-8",
       "px-2",
       "h-[515px]",
+      "bg-gradient-to-r",
+      "from-[#56ccf2]",
+      "to-[#2f80ed]",
     );
     article.appendChild(div);
+
+    // card.classList.add(
+    //   "relative",
+    //   "w-96",
+    //   "drop-shadow-xl",
+    //   "rounded-xl",
+    //   "bg-[#3d3c3d]",
+    // );
+    // card.appendChild(article);
+    // card.appendChild(efect);
 
     const element = document.querySelectorAll("#container-services article");
     if (element.length < quantityServices) {
