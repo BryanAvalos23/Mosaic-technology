@@ -7,7 +7,7 @@ const quantityServices = 3;
 
 <div
   id="container-services"
-  class="flex flex-col flex-wrap items-center justify-center gap-12 md:flex-row md:gap-16 lg:gap-20 my-20"
+  class="flex flex-col flex-wrap items-center justify-center gap-12 md:flex-row md:gap-16 lg:gap-20 my-12"
 >
 </div>
 <div class="w-full flex justify-center">
@@ -54,7 +54,6 @@ const quantityServices = 3;
     const descriptionTag = document.createElement("p");
     const btnMoreInformationServices = document.createElement("a");
     const card = document.createElement("div");
-    const efect = document.createElement("div");
 
     imgTag.classList.add(
       "rounded-full",
@@ -153,20 +152,11 @@ const quantityServices = 3;
       "px-2",
       "h-[515px]",
       "bg-gradient-to-r",
-      "from-[#56ccf2]",
-      "to-[#2f80ed]",
+      "from-[#0a3d62]",
+      "to-[#1e2022]",
     );
-    article.appendChild(div);
 
-    // card.classList.add(
-    //   "relative",
-    //   "w-96",
-    //   "drop-shadow-xl",
-    //   "rounded-xl",
-    //   "bg-[#3d3c3d]",
-    // );
-    // card.appendChild(article);
-    // card.appendChild(efect);
+    article.appendChild(div);
 
     const element = document.querySelectorAll("#container-services article");
     if (element.length < quantityServices) {
