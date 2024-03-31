@@ -1,27 +1,26 @@
 ---
-import Home from "../components/Home.astro";
+import Home from "../components/sectionComponents/Home.astro";
 import Layout from "../layouts/Layout.astro";
-import Services from "../components/Services.astro";
-import AboutUs from "../components/AboutUs.astro";
-import Footer from "../components/Footer.astro";
-import Team from "../components/Team.astro";
+import Services from "../components/sectionComponents/Services.astro";
+import Footer from "../components/sectionComponents/Footer.astro";
 ---
 
 <Layout title="Mosaic Technology - Una consultora TI para innovar tu negocio">
   <Home />
   <main>
-    <h2 class="text-5xl text-blue-800 font-semibold text-center mt-12">
-      Servicios
-    </h2>
-    <Services />
-    <h2 class="text-5xl text-blue-800 font-semibold text-center mt-12">
-      Quienes somos
-    </h2>
-    <AboutUs />
-    <h2 class="text-5xl text-blue-800 font-semibold text-center mt-12">
-      Equipo de trabajo
-    </h2>
-    <Team />
+    <section class="mx-16 my-16 lg:mx-32 lg:my-24">
+      <h3 class="text-2xl lg:text-4xl text-center font-semibold text-white">
+        Con una vision de ayudar a las MYPE en El Salvador, brindandoles
+        diversas soluciones TI, manteniendo una calidad en cada solucion y
+        precios ajustados a tu pressupuesto y a sus proyectos
+      </h3>
+    </section>
+    <section id="soluciones">
+      <h2 class="text-5xl text-white font-semibold text-center mt-12">
+        Soluciones
+      </h2>
+      <Services />
+    </section>
   </main>
   <Footer />
 </Layout>

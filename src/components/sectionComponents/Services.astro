@@ -1,0 +1,166 @@
+---
+import BtnMoreServices from "../BtnMoreServices.astro";
+import services from "../../../public/js/services.ts";
+
+const quantityServices = 3;
+---
+
+<div
+  id="container-services"
+  class="flex flex-col flex-wrap items-center justify-center gap-12 md:flex-row md:gap-16 lg:gap-20 my-12"
+>
+</div>
+<div class="w-full flex justify-center">
+  <BtnMoreServices />
+</div>
+
+<script>
+  import SERVICES from "../../../public/js/services.ts";
+
+  const btnMoreServices = document.querySelector("#btnMoreServices");
+  const containerServices = document.querySelector("#container-services");
+
+  let quantityServices = 3;
+
+  interface Service {
+    title: String;
+    description: String;
+    img: String;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showServices(0, quantityServices);
+    btnMoreServices?.addEventListener("click", () => {
+      const currentServices = quantityServices;
+      quantityServices += 7;
+      showServices(currentServices, quantityServices);
+
+      btnMoreServices.textContent = "Ver menos";
+    });
+  });
+
+  const showServices = (start: number, end: number) => {
+    const serviceToShow = SERVICES.slice(start, end);
+    serviceToShow.forEach((service) => {
+      extractServices(service);
+    });
+  };
+
+  const extractServices = ({ title, description, img }: Service) => {
+    const article = document.createElement("article");
+    const div = document.createElement("div");
+    const imgTag = document.createElement("img");
+    const titleTag = document.createElement("h3");
+    const descriptionTag = document.createElement("p");
+    const btnMoreInformationServices = document.createElement("a");
+    const card = document.createElement("div");
+
+    imgTag.classList.add(
+      "rounded-full",
+      "size-44",
+      "object-cover",
+      "md:size-44",
+      "lg:size-52",
+      "shadow-xl",
+    );
+    if (typeof img === "string") {
+      imgTag.src = img;
+    }
+    imgTag.alt = `Imagen del serivico ${title}`;
+
+    titleTag.classList.add(
+      "font-semibold",
+      "text-xl",
+      "text-white",
+      "md:text-xl",
+      "lg:text-2xl",
+    );
+    if (typeof title === "string") {
+      titleTag.textContent = title;
+    }
+
+    descriptionTag.classList.add(
+      "text-lg",
+      "font-normal",
+      "text-center",
+      "text-white",
+    );
+    if (typeof description === "string") {
+      descriptionTag.textContent = description;
+    }
+
+    div.classList.add(
+      "w-full",
+      "h-full",
+      "flex",
+      "flex-col",
+      "justify-center",
+      "items-center",
+      "gap-2",
+    );
+
+    btnMoreInformationServices.classList.add(
+      "w-[150px]",
+      "bg-white",
+      "h-[50px]",
+      "my-3",
+      "flex",
+      "items-center",
+      "justify-center",
+      "rounded-xl",
+      "cursor-pointer",
+      "relative",
+      "overflow-hidden",
+      "transition-all",
+      "duration-500",
+      "ease-in-out",
+      "shadow-md",
+      "hover:scale-105",
+      "hover:shadow-xl",
+      "hover:text-white",
+      "before:absolute",
+      "before:top-0",
+      "before:-left-full",
+      "before:w-full",
+      "before:h-full",
+      "before:bg-gradient-to-r",
+      "before:from-[#3B82F6]",
+      "before:to-[rgb(105,184,141)]",
+      "before:transition-all",
+      "before:duration-500",
+      "before:ease-in-out",
+      "before:z-[-1]",
+      "before:rounded-xl",
+      "hover:before:left-0",
+      "text-[#323132]",
+      "font-medium",
+    );
+    btnMoreInformationServices.textContent = "Saber mas";
+
+    div.appendChild(imgTag);
+    div.appendChild(titleTag);
+    div.appendChild(descriptionTag);
+    div.appendChild(btnMoreInformationServices);
+
+    article.classList.add(
+      "w-96",
+      "flex",
+      "justify-center",
+      "items-center",
+      "rounded-xl",
+      "py-8",
+      "px-2",
+      "h-[515px]",
+      "bg-gradient-to-r",
+      "from-[#0a3d62]",
+      "to-[#1e2022]",
+    );
+
+    article.appendChild(div);
+
+    const element = document.querySelectorAll("#container-services article");
+    if (element.length < quantityServices) {
+      containerServices?.appendChild(article);
+    }
+  };
+</script>

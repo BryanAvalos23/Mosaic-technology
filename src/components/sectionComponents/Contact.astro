@@ -1,5 +1,5 @@
 ---
-import SendIcon from "./icons/SendIcon.astro";
+import SendIcon from "../icons/SendIcon.astro";
 ---
 
 <h2 class="text-3xl text-white font-semibold text-center mt-4 lg:text-5xl">
@@ -94,6 +94,7 @@ import SendIcon from "./icons/SendIcon.astro";
       </div>
       <div class="mt-4 flex justify-center md:col-span-2">
         <button
+          id="send-message"
           class="rounded-lg relative w-40 h-10 cursor-pointer flex items-center border border-green-400 bg-blue-600 group hover:bg-blue-600 active:bg-blue-500 active:border-green-600"
         >
           <span
@@ -110,3 +111,51 @@ import SendIcon from "./icons/SendIcon.astro";
     </div>
   </form>
 </div>
+
+<script>
+  const firstName = document.querySelector("#first-name") as HTMLInputElement;
+  const lastName = document.querySelector("#last-name") as HTMLInputElement;
+  const email = document.querySelector("#email") as HTMLInputElement;
+  const phone = document.querySelector("#phone-number") as HTMLInputElement;
+  const message = document.querySelector("#message") as HTMLInputElement;
+  const sendMessage = document.querySelector("#send-message");
+
+  interface mail {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    message: string;
+  }
+
+  const mailListSend = {
+    firstName,
+    lastName,
+    email,
+    phone,
+    message,
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {});
+
+  const validateEmail = (mail: String): boolean => {
+    const res =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
+    return res.test(email.value.toLowerCase());
+  };
+
+  const validateFields = (field: String): boolean => {
+    return field.length > 0;
+  };
+
+  // const validateSetUp = (): void => {
+  //   const validate = (
+  //     input: HTMLInputElement,
+  //     validateFunction: (value: string) => boolean,
+  //   ) => {
+  //     input.addEventListener("input", () => {
+  //       const isValid = validateFunction(input.value);
+  //     });
+  //   };
+  // };
+</script>
